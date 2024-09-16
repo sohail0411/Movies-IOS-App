@@ -9,7 +9,7 @@ Setup Guide
 1. Clone the Repository
 To get a copy of the project, run the following command in your terminal:
 
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/sohail0411/Movies-IOS-App.git
 After cloning, navigate into the project directory:
 
 open your-project.xcworkspace

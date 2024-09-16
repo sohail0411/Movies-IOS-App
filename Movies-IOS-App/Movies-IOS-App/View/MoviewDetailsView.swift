@@ -15,9 +15,9 @@ struct MoviewDetailsView: View {
 
     var body: some View {
         ZStack(alignment: .top){
-            VStack {
+            VStack(spacing: 10){
                 ScrollView(.vertical){
-                    VStack{
+                    VStack(spacing: 10){
                         HStack{
                             Text("\(moviesDetailsVM.moviesDetailsModel.runtime ?? "")")
                                 .font(.subheadline)
@@ -47,7 +47,7 @@ struct MoviewDetailsView: View {
                         .shadow(radius: 0.5)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.gray, lineWidth: 1))
                         
-                        HStack{
+                        HStack(spacing: 10){
                             Spacer().frame(width: 15)
                             Image(systemName: "star.circle")
                                 .resizable()
@@ -72,6 +72,8 @@ struct MoviewDetailsView: View {
                             .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.yellow, lineWidth: 2))
                             .padding(.leading,10)
                         
+                        Spacer().frame(height: 5)
+
                         
                         VStack(spacing: 5){
                             Text("Director:")
@@ -124,33 +126,38 @@ struct MoviewDetailsView: View {
                     print("id------------------ \(moviesViewModel.id)")
                     moviesDetailsVM.featchMovieDetails(id: moviesViewModel.id)
                 })
-                
-            }.navigationBarBackButtonHidden(true)
-            .padding(.top,60)
+            }.padding(.top,70)
+     
 
-            
-            HStack{
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
+            VStack{
+                HStack{
+                    Button {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        
+                        Image(systemName: "arrowshape.backward.circle.fill")
+                            .resizable()
+                            .frame(width: 25,height: 25)
+                            .foregroundColor(.black)
+                            .offset(x:10)
+                    }
                     
-                    Image(systemName: "arrowshape.backward.circle.fill")
-                        .resizable()
-                        .frame(width: 25,height: 25)
+                    Text(moviesDetailsVM.moviesDetailsModel.title ?? "")
+                        .font(.system(size: 18).bold())
                         .foregroundColor(.black)
+                        .multilineTextAlignment(.leading)
+                        .frame( width: UIScreen.main.bounds.width/1.2,alignment: .leading)
+                        .padding()
+                    
                 }
-                
-                Text(moviesDetailsVM.moviesDetailsModel.title ?? "")
-                    .font(.system(size: 18).bold())
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.leading)
-                    .frame( width: UIScreen.main.bounds.width/1.2,alignment: .leading)
-                
+                .background(.white)
+                .shadow(radius: 0.3)
+                .ignoresSafeArea()
+                .navigationBarBackButtonHidden(true)
             }
-            .padding(.top,20)
+            .padding(.top,10)
         }
 
-            
         
     }
     

@@ -18,21 +18,22 @@ using Swift Package Manager, the dependencies will be resolved automatically whe
 
 3. Open the Project in Xcode
 If you didn't use CocoaPods, open the project in Xcode using the .xcodeproj file:
-
-
 open your-project.xcodeproj
-4. Build the Project
+
+5. Build the Project
 Select your target device or simulator.
 Press Cmd + B to build the project.
 Ensure there are no build errors.
-5. Run the Project
+
+6. Run the Project
 Select a simulator or a physical device.
 Press Cmd + R to run the project.
-6. Optional: Running on a Physical Device
+
+8. Optional: Running on a Physical Device
 To run the app on a real iPhone or iPad, ensure you have:
 Signed in with your Apple Developer account in Xcode.
 Configured signing and capabilities in the project settings.
-7. Enjoy!
-Once the project builds and runs successfully, you should see the app launch in the simulator or on your device.
+
+9. Enjoy! Once the project builds and runs successfully, you should see the app launch in the simulator or on your device.
 
 

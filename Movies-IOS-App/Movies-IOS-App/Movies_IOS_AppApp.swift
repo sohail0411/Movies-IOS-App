@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct Movies_IOS_AppApp: App {
+    @ObservedObject var data = MoviesViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
-        }
+        }.environmentObject(data)
     }
 }
